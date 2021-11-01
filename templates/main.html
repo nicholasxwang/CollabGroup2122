@@ -1,0 +1,224 @@
+<div style="width:100%;background:#00bfff;margin-bottom:7px;font-size:1.3em;padding-top:7px;padding-bottom:7px;"><center>Welcome to Collaboration Group Beta 1.0</center></div>
+<div style="margin-left:5%;">
+  <a href="/resources" style="color:white;text-decoration:none;">
+
+<svg height="30px" version="1.1" viewBox="0.0 0.0 720.0 720.0" fill="none" stroke="none" stroke-linecap="square" stroke-miterlimit="10" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><clipPath id="p.0"><path d="m0 0l720.0 0l0 720.0l-720.0 0l0 -720.0z" clip-rule="nonzero"/></clipPath><g clip-path="url(#p.0)"><path fill="#000000" fill-opacity="0.0" d="m0 0l720.0 0l0 720.0l-720.0 0z" fill-rule="evenodd"/><path fill="#000000" fill-opacity="0.0" d="m15.779528 360.0l0 0c0 -190.10771 154.11276 -344.22046 344.22046 -344.22046l0 0c91.29294 0 178.84674 36.265984 243.40063 100.81985c64.55383 64.553856 100.819824 152.1077 100.819824 243.40063l0 0c0 190.10773 -154.11273 344.22046 -344.22046 344.22046l0 0c-190.10771 0 -344.22046 -154.11273 -344.22046 -344.22046z" fill-rule="evenodd"/><path stroke="#00bfff" stroke-width="24.0" stroke-linejoin="round" stroke-linecap="butt" d="m15.779528 360.0l0 0c0 -190.10771 154.11276 -344.22046 344.22046 -344.22046l0 0c91.29294 0 178.84674 36.265984 243.40063 100.81985c64.55383 64.553856 100.819824 152.1077 100.819824 243.40063l0 0c0 190.10773 -154.11273 344.22046 -344.22046 344.22046l0 0c-190.10771 0 -344.22046 -154.11273 -344.22046 -344.22046z" fill-rule="evenodd"/><path fill="#009dff" d="m531.8195 145.2122l49.192627 47.835434c2.1055908 2.0474854 3.288147 4.824127 3.2875366 7.7190857c-6.1035156E-4 2.8949585 -1.1843262 5.671097 -3.2908325 7.717682l-39.71112 38.58252c-3.0517578E-4 2.89917E-4 -7.9345703E-4 2.89917E-4 -0.0010375977 0l-65.069824 -63.27559l0 0c-2.746582E-4 -2.89917E-4 -2.746582E-4 -7.6293945E-4 0 -0.0010528564l39.71112 -38.581467l0 0c4.3864746 -4.2618103 11.496887 -4.2602997 15.881531 0.0033874512z" fill-rule="evenodd"/><path fill="#00bfff" d="m489.02032 171.39397l65.07086 63.27559l-297.6063 289.19684l-65.07086 -63.275574z" fill-rule="evenodd"/><path fill="#009dff" d="m256.4042 523.7677l-92.897644 27.212585l27.984253 -90.2677z" fill-rule="evenodd"/></g></svg><span style="font-size:25px; font-weight:900; margin-left:10px;">Collaboration Group</span></a>
+<html>
+<head>
+  <style>
+    .shimmer {
+  display: inline-block;
+  color:white;
+  
+  background: #acacac -webkit-gradient(linear, 100% 0, 0 0, from(#acacac), color-stop(0.5, #ffffff), to(#acacac));
+  
+  background-position: -4rem top; /*50px*/
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation-name: shimmer;
+  -webkit-animation-duration: 2.2s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-background-size: 4rem 100%; /*50px*/
+  
+}
+
+@-webkit-keyframes shimmer {
+    0% {
+        background-position: -4rem top; /*50px*/
+    }
+
+    70% {
+        background-position: 12.5rem top; /*200px*/
+    }
+
+    100% {
+        background-position: 12.5rem top; /*200px*/
+    }
+}
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+    body{
+      background:#111827;
+      color:white;
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  <script src="https://apis.google.com/js/api:client.js"></script>
+  <script>
+  var googleUser = {};
+  var startApp = function() {
+    gapi.load('auth2', function(){
+      // Retrieve the singleton for the GoogleAuth library and set up the client.
+      auth2 = gapi.auth2.init({
+        client_id: '1095017518369-pv5err1i13vdr7s21sgk0r089r4qk7jp.apps.googleusercontent.com',
+        cookiepolicy: 'single_host_origin',
+        // Request scopes in addition to 'profile' and 'email'
+        //scope: 'additional_scope'
+      });
+      attachSignin(document.getElementById('customBtn'));
+    });
+  };
+
+
+  function attachSignin(element) {
+    console.log(element.id);
+    auth2.attachClickHandler(element, {},
+        function(googleUser) {
+          document.getElementById('customBtn').style.display= "none";
+          
+          var name = googleUser.getBasicProfile().getName();
+
+          
+          var email = googleUser.getBasicProfile().getEmail();
+    
+          var image = googleUser.getBasicProfile().getImageUrl();
+          
+          document.cookie = "email="+email+";";
+
+          document.cookie = "name="+name+";";
+
+          document.cookie = "image="+image+";";
+          
+          const list = {{ file|safe }}
+          for (i = 0; i < list.length; i++) {
+            if (list[i] === email) {
+                document.getElementById('true').style.display= "block";
+                document.getElementById('name').innerHTML = name;
+                
+                return;
+            }
+          }
+          document.getElementById('body').style.display= "block";
+          document.getElementById('email').innerHTML = email;
+
+          
+              
+        }, function(error) {
+          alert(JSON.stringify(error, undefined, 2));
+        });
+  }
+  function onSignIn(googleuser) {
+    console.log(element.id);
+    auth2.attachClickHandler(element, {},
+        function(googleUser) {
+          document.getElementById('customBtn').style.display= "none";
+          
+          var name = googleUser.getBasicProfile().getName();
+
+          
+          var email = googleUser.getBasicProfile().getEmail();
+          var image = googleUser.getBasicProfile().getImageUrl();
+          
+          const list = {{ file|safe }}
+          for (i = 0; i < list.length; i++) {
+            if (list[i] === email) {
+                document.getElementById('true').style.display= "block";
+                document.getElementById('name').innerHTML = name;
+                
+                return;
+            }
+          }
+          document.getElementById('body').style.display= "block";
+
+          
+              
+        }, function(error) {
+          alert(JSON.stringify(error, undefined, 2));
+        });
+  }
+  </script>
+  <style type="text/css">
+    #customBtn {
+      display: inline-block;
+      background: #00bfff;
+      color: black;
+      padding-left:30px;
+      padding-right:30px;
+      padding-top:20px;
+      padding-bottom:20px;
+      font-size:2em;
+      border-radius: 5px;
+      border-style:none;
+  
+  
+    }
+    #customBtn:hover {
+      cursor: pointer;
+    }
+    .customBtn2 {
+      display: inline-block;
+      background: #00bfff;
+      color: black;
+      padding-left:30px;
+      padding-right:30px;
+      padding-top:20px;
+      padding-bottom:20px;
+      font-size:2em;
+      border-radius: 5px;
+      border-style:none;
+  
+  
+    }
+    .customBtn2:hover {
+      cursor: pointer;
+    }
+    a{
+      color:white;
+      text-decoration:none;
+    }
+    
+  </style>
+  </head>
+  <body>
+  <!-- In the callback, you would hide the gSignInWrapper element on a
+  successful sign in -->
+  <div id="gSignInWrapper" style='margin-left:20%;margin-top:10%;'>
+    <h1 class='shimmer' style="font-size:3em;font-weight: bold;">Collab Group 2021 - 2022</h1><br>
+    <div id='body' style='display:none'>
+      <!-- <div class="customBtn2">
+      <center>
+      Request Access
+      </center>
+      </div>  
+      <h1><img src="static/cg.png" style='border-radius:50%;height:1.3em;margin-right:5px;background:linear-gradient(to bottom right, #ff00d4,#ff0000,#ffdd00);'>You need Access.</h1>
+      <h2>Ask for access, or switch to an account with access.</h2>
+      <p>You are signed in as: </p>
+      <a href="https://collabgroup2122.nicholasxwang.repl.co/"><span style="padding:10px;border-radius:10px;background:black;color:white;"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><i class="material-icons" style="font-size:1.3em;color:#4284F3;">account_circle</i><span id="email"></span></span></a> -->
+    </div>
+    <div id='true' style='display:none'>
+      <a href='/resources'><div class="customBtn2">
+      <center>
+      Continue Registration
+      </center>
+      </div></a>
+      <!-- <a href='/resources'><div class="customBtn2">
+      <center>
+      View Resources
+      </center>
+      </div></a>
+      <a href='/profile'><div class="customBtn2">
+      <center>
+      Profile
+      </center>
+      </div>  </a> -->
+      <h1>Welcome back, <span id="name"></span></h1>
+
+    </div>
+    <div id="customBtn" class="customGPlusSignIn"  data-onsuccess="onSignIn">
+      <center>
+      Log In!
+      </center>
+    </div>
+  </div>
+  <div id="name"></div>
+  <script>startApp();</script>
+  <meta property="og:title" content="Collaboration Group" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://my.site.com" />
+  <meta property="og:image" content="https://cdn.discordapp.com/icons/866019841307705375/1386cb534a5e2f0ecbdbb40a78a5a598.png?size=256" />
+  <meta property="og:description" content="Official Collaboration Group Website!" />
+  <meta name="theme-color" content="#00b3ff">
+</body>
+
+</html>

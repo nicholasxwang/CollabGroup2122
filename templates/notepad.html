@@ -1,0 +1,84 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+  body{
+    background:#111827;
+    color:white;
+    font-family: 'Lato', sans-serif;
+  }
+  div.editable {
+    width: 300px;
+    height: 200px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+input{
+  width:60%;
+  border-style:solid;
+  border-color:grey;
+  order-width:1px;
+  border-radius:10px;
+  background:transparent;
+  height:30px;padding:20px;
+  outline:none;
+  color:white;
+}
+input:focus{
+  border-color:#0492cf;
+}
+.input{
+  padding:10px;
+  height:500px;
+  border-style:solid;
+  border-color:grey;b
+  order-width:1px;
+  border-radius:10px;
+  background:transparent;
+  outline:none;
+  color:white;
+}
+.input:focus{
+  border-color:#0492cf;
+}
+strong {
+  font-weight: bold;
+}
+.bar{
+  padding-right:20px;
+  padding-left:20px;
+  padding-top:20px;
+  height:50px;
+  border-style:solid;
+  border-color:grey;
+  order-width:1px;
+  border-radius:10px;
+  background:transparent;
+  outline:none;
+  color:white;
+}
+.button{
+  padding:15px;
+  cursor: -webkit-grab; cursor: grab;
+  border-radius:10px;
+}
+</style>
+<div style="margin-left:20%;">
+<h1>Quick Notes by Collab Group</h1>
+<h2><i>Beta</i></h2>
+<input placeholder="Name..."><br><br>
+<div class='bar'><strong id="b" onclick="change('b')" class='button'>B</strong><i id="i" onclick="change('i')"class='button'>I</i><u id="u" onclick="change('u')" class='button'>U</u><span style='color:red;' class='button' id="a" onclick="change('a')">A</span><span class='button' id="hl" "change('hl')"><link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"><i class="material-icons" style="color:white;font-size:1em;">mode</i></span></div>
+<br><br>
+<div contenteditable="true" class='input'>Welcome to <span style="color: lightgreen">Collaboration Group</span>: Quick Notes. Type <strong>Bold</strong> with the buttons above or <strong>Command B</strong>. Type <i>Italics</i> with the buttons above or <i>Command I</i>. 
+</div>
+</div>
+
+<script>
+  function change(i) {
+    if (document.getElementById(i).style.backgroundColor=="rgba(100, 152, 237, 0.3)"){
+      document.getElementById(i).style.backgroundColor="";
+    }
+    else{
+      document.getElementById(i).style.backgroundColor="rgba(100, 152, 237, 0.3)";
+    }
+}
+</script>
