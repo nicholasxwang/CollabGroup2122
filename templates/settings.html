@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<title>Settings - Collab Group</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<head>
+	<!-- Add the style sheet. -->
+	<link id="theme" rel="stylesheet"
+		type="text/css" href="/static/stylesheets/darkblue.css" />
+
+	<script>
+		function toggleTheme(value) {
+
+			// Obtain the name of stylesheet
+			// as a parameter and set it
+			// using href attribute.
+			var sheets = document
+				.getElementsByTagName('link');
+
+			sheets[0].href = value;
+      var request =  $.ajax({
+      type: "POST",
+      url: "/changeTheme",
+      data: {
+        "v":value
+
+      }
+    });
+    request.done(function(data){
+    });
+    request.fail(function (jqXHR, textStatus) {
+      document.getElementById("success").innerHTML = (jqXHR+" • "+textStatus);
+  });
+		}
+	</script>
+</head>
+
+<body>
+	<h2>Changing Style Sheets</h2>
+	<br />
+	Switch between multiple themes
+	using the buttons below.<br />
+
+	<button style="border-style:none;margin:15px;" class="button" onclick="toggleTheme('/static/stylesheets/light.css')">
+		Light
+	</button>
+	
+	<button style="border-style:none;margin:15px;" class="button" onclick="toggleTheme('/static/stylesheets/dark.css')">
+		Dark
+	</button>
+	
+	<button style="border-style:none;margin:15px;" class="button" onclick="toggleTheme('/static/stylesheets/darkblue.css')">
+		Dark Blue
+	</button>
+	
+	<button style="border-style:none;margin:15px;" class="button" onclick="toggleTheme('/static/stylesheets/lightblue.css')">
+		Light Blue
+	</button>
+  <button style="border-style:none;margin:15px;" class="button" onclick="toggleTheme('/static/stylesheets/halloween.css')">
+		Halloween
+	</button>
+</body>
+
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+  function swapStyleSheet() {
+    var sheet = "";
+    var request =  $.ajax({
+      type: "GET",
+      url: "/getTheme"
+    });
+    request.done(function(data){
+      document.getElementById("theme").setAttribute("href", data+"?version="+String.valueOf(getRandomInt(1000000)));  
+    });
+    request.fail(function (jqXHR, textStatus) {
+      alert('bruh')
+  });
+}
+window.onload = swapStyleSheet;
+</script>

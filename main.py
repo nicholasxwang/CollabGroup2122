@@ -3,9 +3,10 @@ import json
 import os
 from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask('app')
+from waitress import serve
+
 
 import base64
-
 
 def encode(key, string):
     encoded_chars = []
@@ -24,6 +25,30 @@ def decode(key, string):
         encoded_chars.append(encoded_c)
     encoded_string = ''.join(encoded_chars)
     return encoded_string
+@app.route("/getTheme")
+def getTheme():
+  with open("accounts.json") as r:
+    r = json.load(r)
+  for i in range(0,len(r)):
+      if r[i]["email"] == request.cookies.get("email"):
+        try:
+          return r[i]["theme"]
+        except:
+          return "/static/stylesheets/darkblue.css"
+  return "/static/stylesheets/darkblue.css"
+@app.route("/changeTheme",methods=["POST"])
+def changeTheme():
+  with open("accounts.json") as r:
+    r = json.load(r)
+  for i in range(0,len(r)):
+    if r[i]["email"] == request.cookies.get("email"):
+      r[i]["theme"] = request.form.get("v")
+      print(r[i]["theme"])
+      with open("accounts.json",'w') as w:
+        json.dump(r,w,indent=4)
+      print(request.form.get("v"))
+      return "cool"
+  return request.form.get("v")
 @app.route('/textbook')
 def textbook():
   return render_template("textbook.html")
@@ -53,6 +78,11 @@ def scrape():
   print('success')
 
   return str(file).replace('\\n','')
+
+@app.route('/settings')
+def settings():
+  return render_template('settings.html')
+
 @app.route('/grades')
 def grades():
   return render_template('grades.html')
@@ -303,6 +333,7 @@ def resources():
     return redirect('/')
   for i in json.load(open('accounts.json')):
     if i['email'] == email:
+      
       return render_template('resources.html',name=name,email=email,image=image)
   return render_template('register.html', email=email)
-app.run(host='0.0.0.0', port=8080)
+serve(app, host='0.0.0.0', port=8080)

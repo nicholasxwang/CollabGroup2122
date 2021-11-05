@@ -4,8 +4,22 @@
       {
         "id": "6c277130-9a2b-45a9-a4af-f2ed864f4575",
         "line": 5,
-        "version": 3866,
+        "version": 4411,
         "index": 171
+      },
+      {
+        "id": "85dadfdf-fa95-4a10-bd7e-0ecc61a4eb1c",
+        "line": 40,
+        "version": 4411,
+        "index": 1191
+      }
+    ],
+    "static/stylesheets/halloween.css": [
+      {
+        "id": "951dfb39-8071-4c5e-ac45-8b7f21f19f3b",
+        "line": 9,
+        "version": 2,
+        "index": 261
       }
     ],
     "templates/chemistry.html": [

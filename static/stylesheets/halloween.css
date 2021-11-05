@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+body{
+  background:#363636;
+  color:white;
+  font-family: 'Roboto', sans-serif;
+}
+
+#customBtn {
+      display: inline-block;
+      background: #ffd000;
+      color: black;
+      padding-left:30px;
+      padding-right:30px;
+      padding-top:20px;
+      padding-bottom:20px;
+      font-size:2em;
+      border-radius: 5px;
+      border-style:none;
+  
+  
+    }
+    #customBtn:hover {
+      cursor: pointer;
+    }
+    .customBtn2 {
+      display: inline-block;
+      background: #ffd000;
+      color: black;
+      padding-left:30px;
+      padding-right:30px;
+      padding-top:20px;
+      padding-bottom:20px;
+      font-size:2em;
+      border-radius: 5px;
+      border-style:none;
+  
+  
+    }
+    .customBtn2:hover {
+      cursor: pointer;
+    }
+    a{
+    color:#039dfc;
+    text-decoration:none;
+  }
+    a:hover{
+      color:#0788d9;
+    }
+
+    #banner{
+      width:100%;
+      background:#ffd000;margin-bottom:7px;
+      font-size:1.3em;
+      padding-top:7px;
+      padding-bottom:7px;
+    }
+
+  input[type=email]:disabled {
+    border-color:#424040;
+    color:#424040;
+    background:rgba(66, 64, 64,0.2);
+  }
+  input[type=password]:disabled {
+    border-color:#424040;
+    color:#424040;
+    background:rgba(66, 64, 64,0.2);
+  }
+  input[type=number]:disabled {
+    border-color:#424040;
+    color:#424040;
+    background:rgba(66, 64, 64,0.2);
+  }
+  input[type=text]:disabled {
+    border-color:#424040;
+    color:#424040;
+    background:rgba(66, 64, 64,0.2);
+  }
+  input[type=email]{
+    height:2.3em;
+    background:transparent;
+    color:white;
+    width:70%;
+    border-style: none none solid none;
+    border-width:2px;
+    border-color:white;
+    outline:none;
+    font-size:1em;
+  }
+  input[type=password]{
+    height:2.3em;
+    background:transparent;
+    color:white;
+    width:70%;
+    border-style: none none solid none;
+    border-width:2px;
+    border-color:white;
+    outline:none;
+    font-size:1em;
+  }
+  
+  input[type=number]{
+    height:2.3em;
+    background:transparent;
+    color:white;
+    width:70%;
+    border-style: none none solid none;
+    border-width:2px;
+    border-color:white;
+    outline:none;
+    font-size:1em;
+  }
+  
+  input[type=password]{
+    height:2.3em;
+    background:transparent;
+    color:white;
+    width:70%;
+    border-style: none none solid none;
+    border-width:2px;
+    border-color:white;
+    outline:none;
+    font-size:1em;
+  }
+  input[type=text]{
+    height:2.3em;
+    background:transparent;
+    color:white;
+    width:70%;
+    border-style: none none solid none;
+    border-width:2px;
+    border-color:white;
+    outline:none;
+    font-size:1em;
+  }
+  .button{
+    float:left;
+    padding:10px;
+    font-size:1.5em;
+    border-radius:10px;
+    background:#ff7300;
+    color:white;
+  }
+  .outerDiv{
+    float:left;padding:30px;width:50px;height:100px;
+  }
+  .icon{
+    font-size:3em;background-color:rgba(255, 115, 0,0.2);color:rgb(255, 115, 0);border-radius:50%;padding:10px;
+  }
+  .divtext{
+    color:#ff7300;
+  }
+  .textbook{
+    background: #FEFEFE;
+    border-radius:25px;
+    color:black;
+    width:400px;
+    height:550px;
+    padding:20px;
+    margin:20px;
+    float:left;
+  }
+  .textbook-image{
+    height:300px;
+  }
+
+  .textbook-button{
+    border-radius:15px;
+    color:white;
+    background:#ffd000;
+    font-size:1.5em;
+    border-style:none;
+    padding:10px;
+  }
+  .textbook-button:hover{
+    background:#067094;
+  }
+  .bar{
+  padding-right:20px;
+  padding-left:20px;
+  padding-top:20px;
+  height:50px;
+  border-style:solid;
+  border-color:grey;
+  order-width:1px;
+  border-radius:10px;
+  background:transparent;
+  outline:none;
+  color:white;
+}
+
+.buttonSelect{
+  padding:15px;
+  cursor: -webkit-grab; cursor: grab;
+  border-radius:10px;
+}
+div.editable {
+    width: 300px;
+    height: 200px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+.notepadInput{
+  width:60%;
+  border-style:solid;
+  border-color:grey;
+  order-width:1px;
+  border-radius:10px;
+  background:transparent;
+  height:30px;padding:20px;
+  outline:none;
+  color:white;
+}
+.notepadInput:focus{
+  border-color:#0492cf;
+}
+.notepadInput2{
+  padding:10px;
+  height:500px;
+  border-style:solid;
+  border-color:grey;
+  order-width:1px;
+  border-radius:10px;
+  background:transparent;
+  outline:none;
+  color:white;
+}
+.notepadInput2:focus{
+  border-color:#0492cf;
+}
+.graderoomInput[type=password]{
+    height:2.3em;
+    background:transparent;
+    color:white;
+    width:50%;
+    border-style: none none solid none;
+    border-width:2px;
+    border-color:white;
+    outline:none;
+    font-size:1.5em;
+    font-family: 'Lato', sans-serif;
+  }
+
+  .graderoomInput[type=text]{
+    height:2.3em;
+    background:transparent;
+    color:white;
+    width:50%;
+    border-style: none none solid none;
+    border-width:2px;
+    border-color:white;
+    outline:none;
+    font-size:1.5em;
+    font-family: 'Lato', sans-serif;
+  }
+  
+  input[type=submit]{
+    padding:10px;font-size:1.5em;border-radius:10px;background:#009dffff;color:white;border-style:none;display:none;
+  }

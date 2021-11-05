@@ -22,7 +22,8 @@
             "P.E. & Sports: Section 2\n",
             "Physics 7: Section 2\n",
             "World History & Geography II: Section 2\n"
-        ]
+        ],
+        "theme": "/static/stylesheets/dark.css"
     },
     {
         "email": "lzpandafox1233@gmail.com",
@@ -97,7 +98,8 @@
             "P.E. & Sports: Section 2\n",
             "Physics 7: Section 2\n",
             "World History & Geography II: Section 2\n"
-        ]
+        ],
+        "theme": "/static/stylesheets/halloween.css"
     },
     {
         "email": "rishaandesai@gmail.com",
@@ -122,6 +124,7 @@
             "P.E. & Sports: Section 2\n",
             "Physics 7: Section 2\n",
             "World History & Geography II: Section 2\n"
-        ]
+        ],
+        "theme": "/static/stylesheets/dark.css"
     }
 ]

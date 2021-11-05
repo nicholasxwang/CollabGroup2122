@@ -1,4 +1,5 @@
-<div style="width:100%;background:#00bfff;margin-bottom:7px;font-size:1.3em;padding-top:7px;padding-bottom:7px;"><center>Welcome to Collaboration Group Beta 1.0</center></div>
+<link id="theme" rel="stylesheet" type="text/css" href="/static/stylesheets/darkblue.css" />
+<div id="banner"><center>Welcome to Collaboration Group Beta 1.0</center></div>
 <div style="margin-left:5%;">
   <a href="/resources" style="color:white;text-decoration:none;">
 
@@ -76,4 +77,24 @@ $('#submit').click(function(){
 });
 
 });
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+  function swapStyleSheet() {
+    var sheet = "";
+    var request =  $.ajax({
+      type: "GET",
+      url: "/getTheme"
+    });
+    request.done(function(data){
+      document.getElementById("theme").setAttribute("href", data+"?version="+String.valueOf(getRandomInt(1000000)));  
+    });
+    request.fail(function (jqXHR, textStatus) {
+      alert('bruh')
+  });
+}
+window.onload = swapStyleSheet;
 </script>

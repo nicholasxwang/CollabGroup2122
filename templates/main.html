@@ -1,4 +1,5 @@
-<div style="width:100%;background:#00bfff;margin-bottom:7px;font-size:1.3em;padding-top:7px;padding-bottom:7px;"><center>Welcome to Collaboration Group Beta 1.0</center></div>
+<link id="theme" rel="stylesheet" type="text/css" href="/static/stylesheets/darkblue.css" />
+<div id="banner"><center>Welcome to Collaboration Group Beta 1.0</center></div>
 <div style="margin-left:5%;">
   <a href="/resources" style="color:white;text-decoration:none;">
 
@@ -36,12 +37,7 @@
         background-position: 12.5rem top; /*200px*/
     }
 }
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-    body{
-      background:#111827;
-      color:white;
-      font-family: 'Roboto', sans-serif;
-    }
+    
   </style>
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
   <script src="https://apis.google.com/js/api:client.js"></script>
@@ -128,47 +124,6 @@
         });
   }
   </script>
-  <style type="text/css">
-    #customBtn {
-      display: inline-block;
-      background: #00bfff;
-      color: black;
-      padding-left:30px;
-      padding-right:30px;
-      padding-top:20px;
-      padding-bottom:20px;
-      font-size:2em;
-      border-radius: 5px;
-      border-style:none;
-  
-  
-    }
-    #customBtn:hover {
-      cursor: pointer;
-    }
-    .customBtn2 {
-      display: inline-block;
-      background: #00bfff;
-      color: black;
-      padding-left:30px;
-      padding-right:30px;
-      padding-top:20px;
-      padding-bottom:20px;
-      font-size:2em;
-      border-radius: 5px;
-      border-style:none;
-  
-  
-    }
-    .customBtn2:hover {
-      cursor: pointer;
-    }
-    a{
-      color:white;
-      text-decoration:none;
-    }
-    
-  </style>
   </head>
   <body>
   <!-- In the callback, you would hide the gSignInWrapper element on a
@@ -222,3 +177,23 @@
 </body>
 
 </html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+  function swapStyleSheet() {
+    var sheet = "";
+    var request =  $.ajax({
+      type: "GET",
+      url: "/getTheme"
+    });
+    request.done(function(data){
+      document.getElementById("theme").setAttribute("href", data+"?version="+String.valueOf(getRandomInt(1000000)));  
+    });
+    request.fail(function (jqXHR, textStatus) {
+      alert('bruh')
+  });
+}
+window.onload = swapStyleSheet;
+</script>

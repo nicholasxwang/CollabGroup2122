@@ -1,55 +1,36 @@
-<div style="width:100%;background:#00bfff;margin-bottom:7px;font-size:1.3em;padding-top:7px;padding-bottom:7px;"><center>Welcome to Collaboration Group Beta 1.0</center></div>
+<link id="theme" rel="stylesheet" type="text/css" href="/static/stylesheets/darkblue.css" />
+<div id="banner"><center>Welcome to Collaboration Group Beta 1.0</center></div>
 <div style="margin-left:5%;">
   <a href="/resources" style="color:white;text-decoration:none;">
 
 <svg height="30px" version="1.1" viewBox="0.0 0.0 720.0 720.0" fill="none" stroke="none" stroke-linecap="square" stroke-miterlimit="10" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><clipPath id="p.0"><path d="m0 0l720.0 0l0 720.0l-720.0 0l0 -720.0z" clip-rule="nonzero"/></clipPath><g clip-path="url(#p.0)"><path fill="#000000" fill-opacity="0.0" d="m0 0l720.0 0l0 720.0l-720.0 0z" fill-rule="evenodd"/><path fill="#000000" fill-opacity="0.0" d="m15.779528 360.0l0 0c0 -190.10771 154.11276 -344.22046 344.22046 -344.22046l0 0c91.29294 0 178.84674 36.265984 243.40063 100.81985c64.55383 64.553856 100.819824 152.1077 100.819824 243.40063l0 0c0 190.10773 -154.11273 344.22046 -344.22046 344.22046l0 0c-190.10771 0 -344.22046 -154.11273 -344.22046 -344.22046z" fill-rule="evenodd"/><path stroke="#00bfff" stroke-width="24.0" stroke-linejoin="round" stroke-linecap="butt" d="m15.779528 360.0l0 0c0 -190.10771 154.11276 -344.22046 344.22046 -344.22046l0 0c91.29294 0 178.84674 36.265984 243.40063 100.81985c64.55383 64.553856 100.819824 152.1077 100.819824 243.40063l0 0c0 190.10773 -154.11273 344.22046 -344.22046 344.22046l0 0c-190.10771 0 -344.22046 -154.11273 -344.22046 -344.22046z" fill-rule="evenodd"/><path fill="#009dff" d="m531.8195 145.2122l49.192627 47.835434c2.1055908 2.0474854 3.288147 4.824127 3.2875366 7.7190857c-6.1035156E-4 2.8949585 -1.1843262 5.671097 -3.2908325 7.717682l-39.71112 38.58252c-3.0517578E-4 2.89917E-4 -7.9345703E-4 2.89917E-4 -0.0010375977 0l-65.069824 -63.27559l0 0c-2.746582E-4 -2.89917E-4 -2.746582E-4 -7.6293945E-4 0 -0.0010528564l39.71112 -38.581467l0 0c4.3864746 -4.2618103 11.496887 -4.2602997 15.881531 0.0033874512z" fill-rule="evenodd"/><path fill="#00bfff" d="m489.02032 171.39397l65.07086 63.27559l-297.6063 289.19684l-65.07086 -63.275574z" fill-rule="evenodd"/><path fill="#009dff" d="m256.4042 523.7677l-92.897644 27.212585l27.984253 -90.2677z" fill-rule="evenodd"/></g></svg><span style="font-size:25px; font-weight:900; margin-left:10px;">Collaboration Group</span></a>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-  body{
-    background:#111827;
-    color:white;
-    font-family: 'Lato', sans-serif;
-  }
-  input[type=password]{
-    height:2.3em;
-    background:transparent;
-    color:white;
-    width:50%;
-    border-style: none none solid none;
-    border-width:2px;
-    border-color:white;
-    outline:none;
-    font-size:1.5em;
-    font-family: 'Lato', sans-serif;
-  }
-
-  input[type=text]{
-    height:2.3em;
-    background:transparent;
-    color:white;
-    width:50%;
-    border-style: none none solid none;
-    border-width:2px;
-    border-color:white;
-    outline:none;
-    font-size:1.5em;
-    font-family: 'Lato', sans-serif;
-  }
-  a{
-    color:#039dfc;
-    text-decoration:none;
-  }
-  a:hover{
-    color:#0788d9;
-  }
-</style>
 <center><br><br>
 <form action="https://beta.graderoom.me/login" method="post" id="login" style="width:50%;border-radius:25px;padding:20px;">
   <h1>Link your CollabGroup Account to Graderoom</h1>
   <p>This part of the website is powered by a 3rd party organization, <a href="https://graderoom.me">Graderoom</a>. Please read it's Terms of Service and Private Policy!</p>
-  <input name="username" placeholder="Graderoom Username" type="text"><br>
-  <input name="password" placeholder="Graderoom Password" type="password"><br><br><br>
+  <input class="graderoomInput" name="username" placeholder="Graderoom Username" type="text"><br>
+  <input class="graderoomInput" name="password" placeholder="Graderoom Password" type="password"><br><br><br>
   <input type="submit" value="Link Graderoom Account" style="padding:10px;font-size:1.5em;border-radius:10px;background:#009dffff;color:white;border-style:none;">
   <a href=""><p onclick="change(this);">Don't have an account?</p></a>
 </form>
 </center>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+  function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+  function swapStyleSheet() {
+    var sheet = "";
+    var request =  $.ajax({
+      type: "GET",
+      url: "/getTheme"
+    });
+    request.done(function(data){
+      document.getElementById("theme").setAttribute("href", dat+"?version="+String.valueOf(getRandomInt(1000000))a);  
+    });
+    request.fail(function (jqXHR, textStatus) {
+      alert('bruh')
+  });
+}
+window.onload = swapStyleSheet;
+</script>
